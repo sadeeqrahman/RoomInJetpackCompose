@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -15,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.LiveData
+import androidx.paging.PagedList
 import com.sadeeq.encoders.roominjetpackcompose.R
 import com.sadeeq.encoders.roominjetpackcompose.components.MobileNumber
 import com.sadeeq.encoders.roominjetpackcompose.components.MyButton
@@ -28,7 +31,9 @@ import com.sadeeq.encoders.roominjetpackcompose.viewmodel.ViewModel
 fun HomeScreen(viewModel: ViewModel = hiltViewModel()) {
     var username by remember { mutableStateOf("") }
     var mobileNumber by remember { mutableStateOf("") }
-    val userList = viewModel.getAllData().collectAsState(initial = emptyList())
+
+    val userList: PagedList<UserEnitity>? by viewModel.userListLiveData.observeAsState()
+
 
     Column {
         Row(
@@ -63,8 +68,8 @@ fun HomeScreen(viewModel: ViewModel = hiltViewModel()) {
                 .background(color = colorResource(id = R.color.white))
         ) {
 
-            items(userList.value.size) { index ->
-                UserCell(userList.value[index],viewModel)
+            items(userList!!.size) { index ->
+                UserCell(userList!![index]!!,viewModel)
             }
 
         }
