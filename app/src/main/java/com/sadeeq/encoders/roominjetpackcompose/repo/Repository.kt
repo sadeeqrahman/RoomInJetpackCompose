@@ -1,6 +1,5 @@
 package com.sadeeq.encoders.roominjetpackcompose.repo
 
-// YourRepository.kt
 
 import com.sadeeq.encoders.roominjetpackcompose.dao.Dao
 import com.sadeeq.encoders.roominjetpackcompose.entity.UserEnitity

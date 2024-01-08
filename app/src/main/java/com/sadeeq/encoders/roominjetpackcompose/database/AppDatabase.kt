@@ -1,6 +1,5 @@
 package com.sadeeq.encoders.roominjetpackcompose.database
 
-// AppDatabase.kt
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

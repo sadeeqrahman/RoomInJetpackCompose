@@ -1,6 +1,5 @@
 package com.sadeeq.encoders.roominjetpackcompose.viewmodel
 
-// YourViewModel.kt
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

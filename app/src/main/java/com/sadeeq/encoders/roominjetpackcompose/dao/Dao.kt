@@ -1,6 +1,5 @@
 package com.sadeeq.encoders.roominjetpackcompose.dao
 
-// YourDao.kt
 
 import androidx.room.Dao
 import androidx.room.Delete

@@ -1,6 +1,5 @@
 package com.sadeeq.encoders.roominjetpackcompose.entity
 
-// YourEntity.kt
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
